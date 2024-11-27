@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
+
 const ScheduleCards = ({ schedule }) => {
   if (schedule.length === 0) {
     return <p>No schedules generated yet. Add topics and generate a schedule.</p>;
@@ -14,8 +15,11 @@ const ScheduleCards = ({ schedule }) => {
             <Card.Body>
               <Card.Title>{entry.date}</Card.Title>
               <Card.Text>
-                <strong>Topic:</strong> {entry.topic} <br />
-                <strong>Hours:</strong> {entry.hours}
+                {entry.topics.map((topic, idx) => (
+                  <div key={idx}>
+                    <strong>{topic.topic}</strong>: {topic.hours} hours
+                  </div>
+                ))}
               </Card.Text>
             </Card.Body>
           </Card>
