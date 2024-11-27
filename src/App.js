@@ -187,6 +187,7 @@ const App = () => {
 
       <section>
         <h2>Generated Schedule</h2>
+        <h3>Rescheduling will come later..</h3>
         <ScheduleCards schedule={schedule} />
       </section>
     </div>
